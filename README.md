@@ -5,9 +5,9 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 ## Terraform
 
 ### Pré-requisitos
-- Terraform instalado
-- Bucket S3 configurado na AWS para armazenamento do state Terraform
-- aws cli configurado com acesso a conta AWS destino
+- Terraform instalado.
+- Bucket S3 configurado na AWS para armazenamento do state Terraform.
+- `"aws cli"` instalado e configurado com acesso a conta AWS destino.
 
 ### Etapas para provisionamento da infraestrutura
 

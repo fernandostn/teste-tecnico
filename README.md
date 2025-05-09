@@ -16,7 +16,7 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 - Fazer as edições necessárias no arquivo `"variables.tf"`, principalmente nas variáveis `"allowed_ssh_cidr"` e `"public_key"`.
 - Executar `"terraform plan"` para visualizarmos os recursos que serão criados pelo Terraform.
 - Executar `"terraform apply"` para aplicar o Terraform e criar a infraestrutura.
-- Após a criação da infraestrutura, observar o nome DNS da instância criada para acesso SSH.
+- Após a criação da infraestrutura, observar no output do Terraform o nome DNS da instância criada para acesso SSH.
 
 
 ## Helm Chart

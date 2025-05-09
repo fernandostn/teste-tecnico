@@ -1,45 +1,36 @@
 # teste-tecnico
 
-git clone https://github.com/fernandostn/teste-tecnico.git
-cd terraform
-terraform plan
-terraform apply
+Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 
-minikube start
-kubectl get nodes
-git clone https://github.com/fernandostn/teste-tecnico.git
-cd teste-tecnico
-helm install my-nginx ./chart
-kubectl get deployments.apps
-kubectl get pods
-kubectl get services
-kubectl port-forward svc/my-nginx 8080:80
-curl localhost:8080
+## Terraform
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
-</head>
-<body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
+### Pré-requisitos
+- Terraform instalado
+- Bucket S3 configurado na AWS para armazenamento do state Terraform
+- aws cli configurado com acesso a conta AWS destino
 
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
+### Etapas para provisionamento da infraestrutura
 
-<p><em>Thank you for using nginx.</em></p>
-</body>
-</html>
+- Executar `"git clone https://github.com/fernandostn/teste-tecnico.git"` para fazer o download do repositório.
+- Executar `"cd teste-tecnico/terraform"` para acessar a pasta referente ao projeto Terraform.
+- Fazer as edições necessárias no arquivo `"variables.tf"`, principalmente nas variáveis `"allowed_ssh_cidr"` e `"public_key"`.
+- Executar `"terraform plan"` para visualizarmos os recursos que serão criados pelo Terraform.
+- Executar `"terraform apply"` para aplicar o Terraform e criar a infraestrutura.
+- Após a criação da infraestrutura, observar o nome DNS da instância criada para acesso SSH.
 
-terraform destroy
+
+## Helm Chart
+
+- Executar `"ssh ubruntu@<nome DNS da instância>"` para acessar a instância EC2.
+- Executar `"minikube start"` para iniciar o cluster Minikube.
+- Executar `"kubectl get nodes"` para testar o provisionamento do cluster.
+- Executar `"git clone https://github.com/fernandostn/teste-tecnico.git"` para fazer o download do repositório.
+- Executar `"cd teste-tecnico"` para acessar a pasta do repositório e ter acesso ao Helm Chart.
+- Executar `"helm install my-nginx ./chart"` para aplicar o Helm Chart.
+- Executar `"kubectl get deployments.apps"` para verificar a criação do deployment da aplicação.
+- Executar `"kubectl get pods"` para verificar a criação do pod.
+- Executar `"kubectl get services"` para verificar a criação do service.
+- Executar `"kubectl port-forward svc/my-nginx 8080:80"` para iniciar o teste da aplicação.
+- Abrir uma nova seção SSH para a instância EC2 e nesta nova seção executar `"curl localhost:8080"` para testar a aplicação. Se tudo funcionar corretamente a saída do comando irá apresntar uma página do Nginx.
+- Sair das seções SSH.
+- Executar `"terraform destroy"` para destruir a infraestrutura.

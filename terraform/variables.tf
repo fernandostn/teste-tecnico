@@ -25,7 +25,7 @@ variable "project_managed_by" {
 variable "allowed_ssh_cidr" {
   description = "Allow SSH access from this CIDR"
   type        = list(string)
-  default     = ["179.218.18.19/32"]
+  default     = ["179.218.18.19/32"]  # IP local que terá acesso SSH
 }
 
 variable "instance_type" {
@@ -49,7 +49,7 @@ variable "ami_id" {
 variable "public_key" {
   description = "Public key to SSH access"
   type        = string
-  default     = "~/.ssh/id_ed25519.pub" #caminho local da chave pública
+  default     = "~/.ssh/id_ed25519.pub" # Caminho local da chave pública
 }
 
 variable "vpc_cidr_project" {

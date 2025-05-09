@@ -2,7 +2,7 @@
 
 Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 
-## Terraform
+## Terraform - provisionamento
 
 ### Pré-requisitos
 - Terraform instalado.
@@ -15,7 +15,7 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 - Executar `"cd teste-tecnico/terraform"` para acessar a pasta referente ao projeto Terraform.
 - Fazer as edições necessárias no arquivo `"variables.tf"`, principalmente nas variáveis `"allowed_ssh_cidr"` e `"public_key"`.
 - Executar `"terraform plan"` para visualizarmos os recursos que serão criados pelo Terraform.
-- Executar `"terraform apply"` para aplicar o Terraform e criar a infraestrutura.
+- Executar `"terraform apply"` ou `"terraform apply -auto-approve"` para aplicar o Terraform e criar a infraestrutura.
 - Após a criação da infraestrutura, observar no output do Terraform o nome DNS da instância criada para acesso SSH.
 
 
@@ -23,7 +23,7 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 
 ### Etapas para deploy do Helm Chart 
 
-- Executar `"ssh ubruntu@<nome DNS da instância>"` para acessar a instância EC2. Dependendo da chave SSH configurada no Terraform, pode ser necessário informar o caminho da chave privada através do comando `"ssh -i <caminho da chave privada> ubruntu@<nome DNS da instância>"`.
+- Executar `"ssh ubuntu@<nome DNS da instância>"` para acessar a instância EC2. Dependendo da chave SSH configurada no Terraform, pode ser necessário informar o caminho da chave privada através do comando `"ssh -i <caminho da chave privada> ubuntu@<nome DNS da instância>"`.
 - Executar `"minikube start"` para iniciar o cluster Minikube.
 - Executar `"kubectl get nodes"` para testar o provisionamento do cluster.
 - Executar `"git clone https://github.com/fernandostn/teste-tecnico.git"` para fazer o download do repositório.
@@ -35,4 +35,10 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 - Executar `"kubectl port-forward svc/my-nginx 8080:80"` para iniciar o teste da aplicação.
 - Abrir uma nova seção SSH para a instância EC2 e nesta nova seção executar `"curl localhost:8080"` para testar a aplicação. Se tudo funcionar corretamente a saída do comando irá apresntar uma página do Nginx.
 - Sair das seções SSH.
-- Executar `"terraform destroy"` para destruir a infraestrutura.
+
+
+## Terraform - exclusão
+
+### Etapas para exclusão da infrasetrutura 
+
+- Executar `"terraform destroy"` ou `"terraform destroy -auto-approve"` para destruir a infraestrutura.

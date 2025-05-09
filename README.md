@@ -21,6 +21,8 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 
 ## Helm Chart
 
+### Etapas para deploy do Helm Chart 
+
 - Executar `"ssh ubruntu@<nome DNS da instância>"` para acessar a instância EC2.
 - Executar `"minikube start"` para iniciar o cluster Minikube.
 - Executar `"kubectl get nodes"` para testar o provisionamento do cluster.

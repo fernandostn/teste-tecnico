@@ -23,7 +23,7 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 
 ### Etapas para deploy do Helm Chart 
 
-- Executar `"ssh ubruntu@<nome DNS da instância>"` para acessar a instância EC2.
+- Executar `"ssh ubruntu@<nome DNS da instância>"` para acessar a instância EC2. Dependendo da chave SSH configurada no Terraform, pode ser necessário informar o caminho da chave privada através do comando `"ssh -i <caminho da chave privada> ubruntu@<nome DNS da instância>"`.
 - Executar `"minikube start"` para iniciar o cluster Minikube.
 - Executar `"kubectl get nodes"` para testar o provisionamento do cluster.
 - Executar `"git clone https://github.com/fernandostn/teste-tecnico.git"` para fazer o download do repositório.

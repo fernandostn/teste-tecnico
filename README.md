@@ -41,4 +41,4 @@ Projeto desenvolvido como requisito avaliativo para vaga DevOps.
 
 ### Etapas para exclusão da infrasetrutura 
 
-- Executar `"terraform destroy"` ou `"terraform destroy -auto-approve"` para destruir a infraestrutura.
+- Executar `"terraform destroy"` ou `"terraform destroy -auto-approve"` para excluir a infraestrutura.
